@@ -22,13 +22,13 @@ As a user, I would like to be able to show/hide event details so that I can see 
 ⦁	when: user clicks on an expanded event, or unhover on the event</br>
 ⦁	then: the event is collapsed to initial state</br>
 
-**USER STORY 3** 
+**USER STORY 3** </br>
 As a user, I would like to be able to specify the number of events I want to view in the app, so that I can see more or fewer events in the events list at once. </br>
 SCENARIO 1: When user hasn’t specified a number, 32 is the default number	</br>
 ⦁	Given: a user has not selected the number of event to view</br>
 ⦁	When: after user has been registered and logged in</br>
 ⦁	Then: a defualt number of 32 is assigned generically to a registered user</br>
-	Scenario 2: User can change the number of events they want to see</br>
+	SCENARIO 2: User can change the number of events they want to see</br>
 ⦁		Given: a user want to change the number of event view</br>
 ⦁		When: a user selects a dropdown and amount of event view they want</br>
 ⦁		Then: the amount of events they user selected will be displayed on mainpage</br>
@@ -40,14 +40,14 @@ As a user, I would like to be able to use the app when offline so that I can see
 ⦁		Given: a user has previously accessed events online and is currently offline</br>
 ⦁		When: app or event page is opened</br>
 ⦁		Then: stored cached data will be made available to user</br>
-	Scenario 2: Show error when user changes the settings (city, time range)</br>
+	SCENARIO 2: Show error when user changes the settings (city, time range)</br>
 ⦁		Given: user is offline </br>
 ⦁		When: user tries to change city, time range settings</br>
 ⦁		Then: show error message</br>
 
 **USER STORY 5** </br>
 As a user, I would like to be able to see a chart showing the upcoming events in each city so that I know what events are organized in which city.</br>
-Scenario 1: Show a chart with the number of upcoming events in each city</br>
+ScCENARIO 1: Show a chart with the number of upcoming events in each city</br>
 ⦁	Given: a user is logged in on main page</br>
 ⦁	When: they want to access upcoming events</br>
 ⦁	Then: updated event will shown on main page.	</br>
