@@ -1,6 +1,6 @@
 import { mockData } from './mock-data';
 import axios from 'axios';
-import { NProgress } from 'nprogress';
+import  NProgress  from 'nprogress';
 
 const checkToken = async (accessToken) => {
    const result = await fetch (`https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
@@ -18,6 +18,7 @@ export const extractLocations = (events) => {
 
 export const getEvents = async () => {
    NProgress.start(); //create progress bars
+
    if (window.location.href.startsWith('http://localhost')){
          NProgress.done();
          return mockData;
@@ -25,7 +26,10 @@ export const getEvents = async () => {
    const token = await getAccessToken();
       if (token) {
       removeQuery();
-      const url = 'https://m5zlfi6yjb.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' + '/ ' + token;
+      const url = "https://m5zlfi6yjb.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" +
+         "/" +
+            token;
+
       const result = await axios.get(url);
       if (result.data) {
          var locations = extractLocations(result.data.events);
@@ -54,7 +58,9 @@ const removeQuery = () => {
 const getToken = async(code) => {
    const encodeCode = encodeURIComponent(code);
    const {access_token} = await fetch ( 
-      'https://m5zlfi6yjb.execute-api.eu-central-1.amazonaws.com/dev/api/token' + '/' + encodeCode
+   'https://m5zlfi6yjb.execute-api.eu-central-1.amazonaws.com/dev/api/token' + 
+      '/' + 
+         encodeCode
    )
    .then((res) => {
       return res.json();
