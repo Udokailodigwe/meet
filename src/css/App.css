@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+   display: grid;
+    justify-items: center;
+    color:black;
+    box-sizing: border-box;
 }
 
 .App-logo {
@@ -21,7 +25,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #000000;
+  color: black;
 }
 
 .App-link {
