@@ -29,7 +29,7 @@ componentWillUnmount() {
   this.mounted = false;
 }
 
-updateEvents = async (location, eventCount) => {
+updateEvents = (location, eventCount) => {
   getEvents().then((events) => {
     const locationEvents = location === "all"
       ?events 
@@ -42,16 +42,13 @@ updateEvents = async (location, eventCount) => {
   });
 }
 
-
-
-
-  render() {
+render() {
     return (
       <div className="App">
         <CitySearch 
             locations ={this.state.locations} 
             updateEvents = {this.updateEvents}/>
-        <NumberOfEvents numberOfEvents={this.state.numberOfEvents} />
+        <NumberOfEvents />
         <EventList 
             events={this.state.events} 
             numberOfEvents={this.state.numberOfEvents}/>
