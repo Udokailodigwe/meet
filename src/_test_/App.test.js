@@ -60,19 +60,19 @@ describe('<App /> integration', () => {
    });
 
    test('get list of all events when user selects "See all cities"', async () => {
-         const AppWrapper = mount(<App />);
-         const suggestionItems = AppWrapper.find(CitySearch).find('.suggestions li');
-         await suggestionItems.at(suggestionItems.length - 1).simulate('click');
-         const allEvents = await getEvents();
+      const AppWrapper = mount(<App />);
+      const suggestionItems = AppWrapper.find(CitySearch).find('.suggestions li');
+      await suggestionItems.at(suggestionItems.length - 1).simulate('click');
+      const allEvents = await getEvents();
          expect(AppWrapper.state('events')).toEqual(allEvents);
          AppWrapper.unmount();
       });
 
-      test('pass NumberOfEvents state to 32', () => {
+   test('pass NumberOfEvents state to 32', () => {
       const AppWrapper = mount(<App />);
       const AppNumberOfEventState = AppWrapper.state('numberOfEvents');
       expect(AppNumberOfEventState).not.toEqual(undefined);
-      expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toEqual(32);
+      expect(AppWrapper.find(EventList).props().numberOfEvents).toEqual(32);
       AppWrapper.unmount();
       });
 });
