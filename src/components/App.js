@@ -51,7 +51,7 @@ updateEvents = async (location, eventCount) => {
         <CitySearch 
             locations ={this.state.locations} 
             updateEvents = {this.updateEvents}/>
-        <NumberOfEvents />
+        <NumberOfEvents numberOfEvents={this.state.numberOfEvents} />
         <EventList 
             events={this.state.events} 
             numberOfEvents={this.state.numberOfEvents}/>
