@@ -11,11 +11,5 @@ describe ('<NumberOfEvents /> components', () => {
    test('render text input', () => {
       expect(NumberOfEventsWrapper.find('.number-of-events')).toHaveLength(1);
    });
-
-   test('render text input correctly from prop', () => {
-      const numberOfEvents = NumberOfEventsWrapper.prop('numberOfEvents');
-      expect(NumberOfEventsWrapper.find('.number-of-events').prop('value')).toBe(numberOfEvents);
-   });
-   
 });
 
