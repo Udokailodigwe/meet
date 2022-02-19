@@ -36,7 +36,7 @@ updateEvents = async (location, eventCount) => {
       :events.filter((event) => event.location === location);
     if (this.mounted) {
         this.setState({
-          events: locationEvents.slice(0, this.state.numberOfEvents),
+          events: locationEvents.slice(0, this.state.numberOfEvents)
       });
     }
   });
@@ -48,9 +48,13 @@ updateEvents = async (location, eventCount) => {
   render() {
     return (
       <div className="App">
-        <CitySearch locations ={this.state.locations} updateEvents = {this.updateEvents}/>
+        <CitySearch 
+            locations ={this.state.locations} 
+            updateEvents = {this.updateEvents}/>
         <NumberOfEvents />
-        <EventList events={this.state.events} numberOfEvents={this.state.numberOfEvents}/>
+        <EventList 
+            events={this.state.events} 
+            numberOfEvents={this.state.numberOfEvents}/>
       </div>
 
     );
