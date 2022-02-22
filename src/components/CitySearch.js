@@ -5,7 +5,7 @@ class CitySearch extends Component {
    state = {
       query: " ",
       suggestions: [ ],
-      showSuggestions: undefined
+      showSuggestions: undefined,
    }
 
    handleInputChanged = (event) => {
@@ -35,7 +35,9 @@ class CitySearch extends Component {
                className='city'
                value = {this.state.query}
                onChange = {this.handleInputChanged}
-               onFocus={()=> {this.setState({showSuggestions: true}) }}
+               onFocus={()=> {this.setState({showSuggestions: true})
+               }}
+               placeholder="Search for a city"
             />
             <ul className='suggestions' style ={this.state.showSuggestions ? {}: {display: 'none'}}>
                {this.state.suggestions.map((suggestion) => (
@@ -43,7 +45,7 @@ class CitySearch extends Component {
                      {suggestion}
                   </li>
                ))}
-               <li onClick={() => this.handleItemClicked("all")}>
+               <li key='all' onClick={() => this.handleItemClicked("all")}>
                   <b >See all cities</b>
                </li>
             </ul>
