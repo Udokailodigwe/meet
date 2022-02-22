@@ -38,8 +38,7 @@ updateEvents = (location, eventCount) => {
       :events.filter((event) => event.location === location);
     if (this.mounted) {
         this.setState({
-          events: locationEvents,
-          // events: locationEvents.slice(0, this.state.numberOfEvents)
+          events: locationEvents.slice(0, this.state.numberOfEvents),
       });
     }
   });
