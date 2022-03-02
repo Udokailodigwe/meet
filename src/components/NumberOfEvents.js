@@ -34,7 +34,7 @@ handleInputChange = (event) => {
    render ( ) {
       return (
          <div className='NumberOfEvents'>
-            <p><b>Number of Events: </b></p>
+            <p id='search_text'>Select the amount of evens to be shown </p>
             <input 
             type = 'number'
             className='number-of-events'
