@@ -11,9 +11,9 @@ class EventList extends Component {
       <Row className="EventList">
          {events.length === 0 && 
             <div>
-               <h2 id= 'search_text'>Fetching events...</h2>
-               <i  id= 'search_text'>
-               (Please note, events won't display if number of event input is 0
+               <h2 id= 'event_load'>Waiting for events...</h2>
+               <i  id= 'event_load'>
+               (Please note, events won't display if amount of event input is 0
                </i>
             </div>}
          {events.map((event) => (
