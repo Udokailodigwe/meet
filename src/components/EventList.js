@@ -9,11 +9,11 @@ class EventList extends Component {
       const {events} = this.props;
       return (
       <Row className="EventList">
-         {events.length === 0 && 
+         {events.length < 1 && 
             <div>
                <h2 id= 'event_load'>Waiting for events...</h2>
                <i  id= 'event_load'>
-               (Please note, events won't display if amount of event input is 0)
+               (Please note, events won't display if amount of event input is less than 0)
                </i>
             </div>}
          {events.map((event) => (
