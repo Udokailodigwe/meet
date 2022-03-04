@@ -11,8 +11,8 @@ class EventList extends Component {
       <Row className="EventList">
          {events.length === 0 && 
             <div>
-               <h2>Fetching events...</h2>
-               <i>
+               <h2 id= 'search_text'>Fetching events...</h2>
+               <i  id= 'search_text'>
                (Please note, events won't display if number of event input is 0
                </i>
             </div>}
