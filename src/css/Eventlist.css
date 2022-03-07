@@ -3,11 +3,11 @@
   grid-gap:2px;
   }
 
-  #event_load{
-  color: gold;
-  position: relative;
-  top: 150px;
-  left: 300px;
+  .warning_text{
+  position: fixed;
+  top: 50px;
+  font-size: 16px;
+  font-style: italic;
 
 }
 
@@ -15,6 +15,19 @@
   background-color: #bdb76b;
   }
   
+
+  .warning_text{
+    animation: text_movement infinite 30s alternate-reverse;
+  }
+
+  @keyframes text_movement {
+    from{
+      transform: translate(30px);
+    }
+    to{
+      transform: translate(700px);
+    }
+  }
 
   @media screen and (min-width:0px) and (max-width:450px) {
     .EventList {
@@ -36,3 +49,26 @@
       grid-template-columns: repeat(2, 1fr );
     }
   }
+
+  @media (max-width:915px){
+   .warning_text{
+      margin-top: -40px;
+   }
+}
+
+@media(max-width: 540px), (min-width: 541px){
+   @keyframes text_movement {
+    from{
+      transform: translate(30px);
+    }
+    to{
+      transform: translate(90px);
+    }
+  }
+}
+
+@media(max-width: 471px){
+  .warning_text{
+    display: none;
+  }
+}

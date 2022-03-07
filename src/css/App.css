@@ -10,7 +10,13 @@
 
 #search_text{
   color: gold;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: -5px;
+}
+
+#search_number{
+  color: gold;
+  margin-top: 55px;
 }
 
 ul {
@@ -36,7 +42,7 @@ input[type="number"] {
   outline: none;
   border: 1px solid #ccc;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 10px;
   align-self: center;
   height: 25px;
 }
@@ -52,6 +58,7 @@ input[type="number"] {
   max-width: 300px;
   margin: auto;
   position: relative;
+  text-align: center;
 }
 
 .suggestions {
@@ -59,7 +66,7 @@ input[type="number"] {
   position: absolute;
   z-index: 2;
   align-self: center;
-  margin: 0;
+  margin: 40px;
   top: 43px;
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
@@ -78,7 +85,7 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  background-color: #cfd15b;
 }
 
 .event {
@@ -139,10 +146,10 @@ input[type="number"] {
   font-family: sans-serif;
 }
 
-.Alert {
+/* .Alert {
   position: fixed;
   top: 20px;
-}
+} */
 
 .data-vis-wrapper {
   display: flex;
