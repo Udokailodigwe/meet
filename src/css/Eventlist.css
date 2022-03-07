@@ -17,7 +17,7 @@
   
 
   .warning_text{
-    animation: text_movement infinite 30s alternate-reverse;
+    animation: text_movement infinite 20s alternate-reverse;
   }
 
   @keyframes text_movement {
