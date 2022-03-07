@@ -66,6 +66,16 @@
     }
   }
 }
+@media (min-width: 541px){
+   @keyframes text_movement {
+    from{
+      transform: translate(30px);
+    }
+    to{
+      transform: translate(800px);
+    }
+  }
+}
 
 @media(max-width: 471px){
   .warning_text{
