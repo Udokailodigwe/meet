@@ -57,7 +57,6 @@ render() {
         <NumberOfEvents
           updateNumberofEvents = {this.updateNumberofEvents}
         />
-        <div id='search_text'>Search for upcoming tech events around the world</div>
         <CitySearch 
             locations ={this.state.locations} 
             updateEvents = {this.updateEvents}/>
