@@ -1,46 +1,44 @@
 import React, { Component } from 'react';
+import {ErrorAlert} from './Alert';
+
+import '../css/Numberofevents.css';
 
 class NumberOfEvents extends Component {
    state = {
-      numberOfEvents: 32,
+      numberOfEvents: 32
    }
 
-
-
 handleInputChange = (event) => {
+   const number = event.target.value;
+   if (number > 0 && number < 33) {
       this.setState({
-      numberOfEvents: event.target.value,
+         numberOfEvents: number,
+         errorMessage: ' '
+      });
+      this.props.updateNumberofEvents (number);
+   }else {
+      this.setState({
+         errorMessage: 'Please choose between number 1 to 32 only! '
    });
-   this.props.updateNumberofEvents(event.target.value);
+      this.props.updateNumberofEvents(32);
+   }
 };
 
-
-   // handleInputChange = (event) => {
-   //    const number = event.target.value;
-   //    if (number < 1 && number > 32) {
-   //       this.setState({
-   //          message: 'please choose between 1 and 32',
-   //       });
-   //       this.props.updateNumberofEvents(32);
-   //    } else {
-   //       this.setState({
-   //          numberOfEvents: number,
-   //          message: ' ',
-   //       });
-   //    }
-   //    this.props.updateNmuberOfEvents(event.target.value);
-   // };
-
-   render ( ) {
+render ( ) {
       return (
-         <div className='NumberOfEvents'>
-            <p id='search_text'>Select the amount of events to be shown </p>
-            <input 
-            type = 'number'
-            className='number-of-events'
-            value = {this.state.numberOfEvents}
-            onChange = {this.handleInputChange}
-            />
+         <div>
+            <div className='NumberOfEvents'>
+                  <p id='search_number'>Select the amount of events to be shown </p>
+                  <input 
+               type = 'number'
+               className='number-of-events'
+               value = {this.state.numberOfEvents}
+               onChange = {this.handleInputChange}
+               />
+            </div>
+            <p className='error_text'>
+               <ErrorAlert className='error_text'  text={this.state.errorMessage} />
+            </p>
             </div>
       );
    }
