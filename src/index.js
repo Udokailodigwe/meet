@@ -17,7 +17,7 @@ ReactDOM.render(
 );
 
 //PWA
-serviceWorkerRegistration.unregister();
+serviceWorkerRegistration.register();
 
 // performance monitoring
 reportWebVitals();
