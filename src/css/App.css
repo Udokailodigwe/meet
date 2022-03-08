@@ -229,3 +229,9 @@ input[type="number"] {
     margin: 0 auto;
   }
 }
+@media (max-width: 375px) {
+  #search_number{
+  color: gold;
+  margin-top: 55px;
+  }
+}
