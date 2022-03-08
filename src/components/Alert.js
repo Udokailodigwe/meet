@@ -6,7 +6,7 @@ class Alert extends Component {
       this.color = null;
    }
 
-   getSstyle = () => {
+   getStyle = () => {
       return {
          color : this.color,
       };
@@ -14,7 +14,7 @@ class Alert extends Component {
 
    render () {
       return (
-            <p style={this.getSstyle()}>{this.props.text}</p>
+            <p style={this.getStyle()}>{this.props.text}</p>
          
       );
    }
