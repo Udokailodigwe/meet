@@ -21,15 +21,16 @@ function WelcomeScreen(props) {
                            <b>Sign in with google</b>
                         </button>
                         <div className="createGoogleAccount">
-            <p className="sign_in-text">Need a google account to sign in?<br></br> 
+            <p className="sign_in-text">Need a Google account to sign in?<br></br> 
             Create one <a href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp">here!</a>
             </p>
             
-        </div>
+                        </div>
                         </div>
                      <a
                         href="https://udokailodigwe.github.io/meet/privacy.html"
                         rel="nofollow noopener"
+                        style={{textDecoration: 'none'}}
                      >
                         Privacy policy
                      </a>
