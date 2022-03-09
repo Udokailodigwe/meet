@@ -11,11 +11,10 @@ render() {
       const {events} = this.props;
       return (
       <Row className="EventList">
-            {events.length >= 1 &&
-               <p className='warning_text'>
-               <WarningAlert  text='Most displayed events will soon be, or already outdated! '/>
-               </p>
-            }
+            <p className='warning_text'>
+            {!navigator.online ?
+               (<WarningAlert  text='You are currently offline! Displayed events might be out of date!'/>) : (<WarningAlert text=' '/>)
+            }</p>
             {events.map((event) => (
             <Col className='col' key={event.id}> 
                <Event  event={event} />
