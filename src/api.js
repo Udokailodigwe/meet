@@ -19,11 +19,11 @@ export const extractLocations = (events) => {
 export const getEvents = async () => {
    NProgress.start(); //create progress bars
 
-   if (window.location.href.startsWith('http://localhost')){
+   if (window.location.href.startsWith('http://localhost')){ //if localhost fetch mockdata
          NProgress.done();
          return mockData;
    }
-   if (!navigator.onLine) {
+   if (!navigator.onLine) { //checking the online state, PWA purpose
    const events = await localStorage.getItem("lastEvents");
    NProgress.done();
    return events ? JSON.parse(events).events:[];
