@@ -7,6 +7,7 @@ import '../css/App.css';
 import '../css/nprogress.css';
 import WelcomeScreen from './WelcomeScreen';
 
+
 class App extends Component{
   state = {
     events: [ ],
@@ -60,7 +61,7 @@ updateNumberofEvents = (eventNumbers) => {
 
 render() {
     if( this.state.showWelcomeScreen === undefined) 
-        return <div className='App' />
+        return <div className='App' />;
     return (
       <div className="App">
         <NumberOfEvents
