@@ -169,6 +169,15 @@ input[type="number"] {
   min-width: 100%;
   display: flex;
 }
+.event_graph {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.event_graph .recharts-responsive-container {
+  min-width: 100%;
+  display: flex;
+}
 .recharts-surface {
   overflow: visible;
 }
