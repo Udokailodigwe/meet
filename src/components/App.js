@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
+import EventGenre from './EventGenre';
 import { getEvents, extractLocations,  checkToken, getAccessToken } from '../api';
 import '../css/App.css';
 import '../css/nprogress.css';
@@ -92,12 +93,36 @@ render() {
             locations ={this.state.locations} 
             updateEvents = {this.updateEvents}
         />
-        <div>Events in each city</div>
+
+        <div className='data-vis-wrapper'>
+        <EventGenre events={this.state.events}/>
+          <ResponsiveContainer height = {400}>
+            <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20,}}>
+              <CartesianGrid />
+              <XAxis type="category" dataKey="city" name="city" />
+              <YAxis 
+                allowDecimals={false} 
+                type="number" 
+                dataKey="number" 
+                name="number of events" 
+                />
+              <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+              <Scatter data={this.getData()} fill="#ffd700" />
+            </ScatterChart>
+          </ResponsiveContainer>
+        </div>
+
+        <div className='event_graph'>Events in each city</div>
         <ResponsiveContainer height = {400}>
           <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20,}}>
             <CartesianGrid />
             <XAxis type="category" dataKey="city" name="city" />
-            <YAxis allowDecimals={false} type="number" dataKey="number" name="number of events" />
+            <YAxis 
+                allowDecimals={false} 
+                type="number" 
+                dataKey="number" 
+                name="number of events" 
+                />
             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
             <Scatter data={this.getData()} fill="#ffd700" />
           </ScatterChart>
