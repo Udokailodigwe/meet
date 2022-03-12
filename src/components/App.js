@@ -93,26 +93,11 @@ render() {
             locations ={this.state.locations} 
             updateEvents = {this.updateEvents}
         />
-
+        
         <div className='data-vis-wrapper'>
-        <EventGenre events={this.state.events}/>
-          <ResponsiveContainer height = {400}>
-            <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20,}}>
-              <CartesianGrid />
-              <XAxis type="category" dataKey="city" name="city" />
-              <YAxis 
-                allowDecimals={false} 
-                type="number" 
-                dataKey="number" 
-                name="number of events" 
-                />
-              <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-              <Scatter data={this.getData()} fill="#ffd700" />
-            </ScatterChart>
-          </ResponsiveContainer>
-        </div>
+                Events in each city 
+                <EventGenre events={this.state.events}/>
 
-        <div className='event_graph'>Events in each city</div>
         <ResponsiveContainer height = {400}>
           <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20,}}>
             <CartesianGrid />
@@ -127,6 +112,7 @@ render() {
             <Scatter data={this.getData()} fill="#ffd700" />
           </ScatterChart>
         </ResponsiveContainer>
+        </div>
         <EventList 
             events={this.state.events}
             numberOfEvents={this.state.numberOfEvents}
