@@ -17,7 +17,9 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-import Accordion from 'react-bootstrap/Accordion'
+import {Accordion} from 'react-bootstrap/Accordion'
+import AccordionItem from 'react-bootstrap/esm/AccordionItem';
+
 
 
 
@@ -88,22 +90,23 @@ render() {
         return <div className='App' />;
     return (
       <div className="App">
-        <NumberOfEvents
-          updateNumberofEvents = {this.updateNumberofEvents}
-        />
+        <h1>Meet App</h1>
         <CitySearch 
             locations ={this.state.locations} 
             updateEvents = {this.updateEvents}
         />
+        <NumberOfEvents
+          updateNumberofEvents = {this.updateNumberofEvents}
+        />
         <Accordion flush>
           <div className='data-vis-wrapper'>
-          <Accordion.Item eventKey="0">
+          <AccordionItem eventKey="0">
             <Accordion.Header>Percentage of Eventgenres</Accordion.Header>
               <Accordion.Body>
                 <EventGenre events={this.state.events}/>
               </Accordion.Body>
-          </Accordion.Item>
-        <Accordion.Item eventKey="1">
+          </AccordionItem>
+        <AccordionItem eventKey="1">
             <Accordion.Header>Events per Location</Accordion.Header>
               <Accordion.Body>
                   <ResponsiveContainer height = {400}>
@@ -121,7 +124,7 @@ render() {
                   </ScatterChart>
                   </ResponsiveContainer>
               </Accordion.Body>
-          </Accordion.Item>
+          </AccordionItem>
         </div>
       </Accordion>
 
