@@ -17,6 +17,8 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
+import Accordion from 'react-bootstrap/Accordion'
+
 
 
 class App extends Component{
@@ -93,10 +95,38 @@ render() {
             locations ={this.state.locations} 
             updateEvents = {this.updateEvents}
         />
-        
-        <div className='data-vis-wrapper'>
-                Events in each city 
+        <Accordion flush>
+          <div className='data-vis-wrapper'>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>Percentage of Eventgenres</Accordion.Header>
+              <Accordion.Body>
                 <EventGenre events={this.state.events}/>
+              </Accordion.Body>
+          </Accordion.Item>
+        <Accordion.Item eventKey="1">
+            <Accordion.Header>Events per Location</Accordion.Header>
+              <Accordion.Body>
+                  <ResponsiveContainer height = {400}>
+                  <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20,}}>
+                  <CartesianGrid />
+                  <XAxis type="category" dataKey="city" name="city" />
+                  <YAxis 
+                    allowDecimals={false} 
+                    type="number" 
+                    dataKey="number" 
+                    name="number of events" 
+                  />
+                  <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+                  <Scatter data={this.getData()} fill="#ffd700" />
+                  </ScatterChart>
+                  </ResponsiveContainer>
+              </Accordion.Body>
+          </Accordion.Item>
+        </div>
+      </Accordion>
+
+      <div className='event_graph'>
+        <EventGenre events={this.state.events}/>
 
         <ResponsiveContainer height = {400}>
           <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20,}}>
