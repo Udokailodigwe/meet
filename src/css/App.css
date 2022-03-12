@@ -56,6 +56,10 @@ input[type="number"] {
   width: 200px;
 }
 
+.event_graph{
+  color:bisque;
+}
+
 .CitySearch {
   display: flex;
   flex-direction: column;
