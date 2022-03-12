@@ -225,7 +225,10 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
-
+.accordion {
+    width: 80%;
+    margin-bottom: 10px;
+}
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
@@ -240,7 +243,43 @@ input[type="number"] {
 }
 @media (max-width: 550px) {
   #search_number{
-  color: gold;
   margin-top: 90px;
   }
+}
+
+
+@media screen and (min-width: 0px) and (max-width:400px) {
+    .data-vis-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .event_graph {
+        display: none;
+    }
+}
+
+  @media screen and (min-width:400px) and (max-width:1000px) {
+    .data-vis-wrapper2 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .accordion {
+        display: none;
+    }   
+
+}
+
+
+@media screen and (min-width:1000px) {
+    .data-vis-wrapper2 {
+        width: 100%;
+    }
+
+    .accordion {
+        display: none;
+    }
 }
