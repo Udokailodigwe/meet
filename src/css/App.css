@@ -254,31 +254,26 @@ input[type="number"] {
         flex-direction: column;
         width: 100%;
     }
-
     .event_graph {
         display: none;
     }
 }
 
   @media screen and (min-width:400px) and (max-width:1000px) {
-    .data-vis-wrapper2 {
+    .event_graph {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
-
     .accordion {
         display: none;
     }   
-
 }
 
-
 @media screen and (min-width:1000px) {
-    .data-vis-wrapper2 {
+    .event_graph {
         width: 100%;
     }
-
     .accordion {
         display: none;
     }
