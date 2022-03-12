@@ -17,7 +17,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-import {Accordion} from 'react-bootstrap/Accordion'
+import {Accordion} from 'react-bootstrap/';
 import AccordionItem from 'react-bootstrap/esm/AccordionItem';
 
 
