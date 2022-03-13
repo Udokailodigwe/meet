@@ -5,7 +5,10 @@ import {
 
 const EventGenre = ({ events }) => {
 
-   useEffect(()=>{ setData(() => getData());}, [events]);
+   useEffect(()=>{
+      setData(() => getData());
+   }, // eslint-disable-next-line react-hooks/exhaustive-deps
+      [events]);
    const [data, setData] = useState([]);
 
    const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS' ];
