@@ -1,19 +1,4 @@
 .city{
-   margin-top: 10px;
-   margin-bottom: 10px;
-}
-
-.info_alert{
-   position: fixed;
-   top: 20px;
-   right: 60px;
-}
-
-
-@media (max-width:915px){
-   .info_alert{
-      margin-top: 30px;
-      font-size: 14px;
-   }
+   margin-top: 7px;
 }
 

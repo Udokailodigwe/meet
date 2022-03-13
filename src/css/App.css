@@ -16,13 +16,20 @@
 
 #search_number{
   color: gold;
-  margin-top: 55px;
+  margin-top: 40px;
+  margin-bottom: 0px;
 }
+
+.number-of-events{
+margin-top: 3px;
+}
+
 h1{
-  color: rgb(146, 136, 41);
+  text-align: left;
+  color: rgb(208, 187, 2)
 }
 h4{
- color: rgb(146, 136, 41);}
+ color: rgb(255, 255, 255);}
 
 ul {
   padding: 0;
@@ -31,13 +38,6 @@ ul {
 
 p {
   margin: 5px 0;
-}
-
-.display-none {
-  display: none;
-}
-.showSuggestions {
-  display: block;
 }
 
 input[type="text"],
@@ -56,10 +56,6 @@ input[type="number"] {
   width: 200px;
 }
 
-.event_graph{
-  color:bisque;
-}
-
 .CitySearch {
   display: flex;
   flex-direction: column;
@@ -71,12 +67,14 @@ input[type="number"] {
 }
 
 .suggestions {
-  width: 250px;
-  position: absolute;
+  padding: 0px;
+  list-style: none;
+  width: 185px;
+  position: relative;
   z-index: 2;
   align-self: center;
-  margin: 40px;
-  top: 43px;
+  margin: 0px;
+  top: 5px;
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
@@ -99,11 +97,8 @@ input[type="number"] {
 
 .event {
   padding: 10px 10px 35px;
-  margin-bottom: 3px;
-  margin-top: 3px;
   text-align: left;
-  border: 1px solid rgb(95, 29, 201);
-  border-radius: 10px;
+  border-radius: 5px;
   position: relative;
 }
 
@@ -119,7 +114,7 @@ input[type="number"] {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-  background: gold;
+  background: rgb(2, 43, 27);
 }
 
 .name {
@@ -155,35 +150,28 @@ input[type="number"] {
   font-family: sans-serif;
 }
 
-/* .Alert {
-  position: fixed;
-  top: 20px;
-} */
-
-.data-vis-wrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.data-vis-wrapper, .data-vis-wrapper2 {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
 }
+
 .data-vis-wrapper .recharts-responsive-container {
   min-width: 100%;
   display: flex;
 }
-.event_graph {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.event_graph .recharts-responsive-container {
+
+.data-vis-wrapper2 .recharts-responsive-container {
   min-width: 100%;
   display: flex;
 }
+
 .recharts-surface {
   overflow: visible;
+  background-color: rgb(0, 84, 89)
 }
 
 .login-button {
-  color: #494949;
+  color: #4b4949;
   text-transform: uppercase;
   text-decoration: none;
   background: #ffffff;
@@ -195,19 +183,23 @@ input[type="number"] {
   margin: 1rem;
 }
 
+.welcome_text{
+  text-align: center;
+}
+
 .google-btn {
   width: 184px;
   height: 42px;
   margin: 1rem;
-  background-color: #4285f4;
+  background-color: #42adf4;
   border-radius: 2px;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
 }
 .google-btn:hover {
-  box-shadow: 0 0 6px #4285f4;
+  box-shadow: 0 0 6px #416194;
 }
 .google-btn:active {
-  background: #1669f2;
+  background: #25416f;
 }
 .google-icon-wrapper {
   position: absolute;
@@ -237,53 +229,49 @@ input[type="number"] {
 .accordion {
     width: 80%;
     margin-bottom: 10px;
+    margin-top: 20px;
+    position: relative;
+    left: 30px;
 }
 
-@media only screen and (min-width: 992px) {
+button.accordion-button {
+    color: #000;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+
+@media only screen and (min-width: 0px) and (max-width:400px) {
   .data-vis-wrapper {
-    flex-direction: row;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
   }
-  .data-vis-wrapper .recharts-responsive-container {
-    flex-basis: 50%;
-    max-width: 50%;
-    min-width: auto;
-    margin: 0 auto;
-  }
-}
-@media (max-width: 550px) {
-  #search_number{
-  margin-top: 90px;
+  .data-vis-wrapper2{
+    display: none;
   }
 }
 
-
-@media screen and (min-width: 0px) and (max-width:400px) {
-    .data-vis-wrapper {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-    .event_graph {
-        display: none;
-    }
+@media (min-width: 400px) and (max-width: 1000px) {
+  .data-vis-wrapper2{
+    flex-direction: column;
+    display: flex;
+    width: 100%;  
+  }
+  .accordion{
+    display: none;
+  }
 }
 
-  @media screen and (min-width:400px) and (max-width:1000px) {
-    .event_graph {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-    .accordion {
-        display: none;
-    }   
-}
 
-@media screen and (min-width:1000px) {
-    .event_graph {
-        width: 100%;
+@media screen and (min-width: 1000px) {
+    .data-vis-wrapper2 {
+      width: 100%;
     }
     .accordion {
         display: none;
     }
 }
+
+
+
