@@ -26,8 +26,8 @@ handleInputChange = (event) => {
 
 render ( ) {
       return (
-         <div>
-            <div className='NumberOfEvents'>
+         <div className='NumberOfEvents'>
+            <div>
                   <p id='search_number'>Select the amount of events to be shown </p>
                   <input 
                type = 'number'
