@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import EventGenre from './EventGenre';
-import { getEvents, extractLocations,  checkToken, getAccessToken } from '../api';
+import { getEvents, extractLocations,  checkToken, getAccessToken} from '../api';
 import '../css/App.css';
 import '../css/nprogress.css';
 import WelcomeScreen from './WelcomeScreen';
@@ -17,8 +18,9 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-import {Accordion} from 'react-bootstrap/';
+import {Accordion} from 'react-bootstrap';
 import AccordionItem from 'react-bootstrap/esm/AccordionItem';
+
 
 
 
@@ -90,7 +92,7 @@ render() {
         return <div className='App' />;
     return (
       <div className="App">
-        <h1>Meet App</h1>
+        <h1>MEET APP</h1>
         <CitySearch 
             locations ={this.state.locations} 
             updateEvents = {this.updateEvents}
@@ -120,7 +122,7 @@ render() {
                     name="number of events" 
                   />
                   <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-                  <Scatter data={this.getData()} fill="#ffd700" />
+                  <Scatter data={this.getData()} fill="#ebe3c0" />
                   </ScatterChart>
                   </ResponsiveContainer>
               </Accordion.Body>
@@ -128,7 +130,7 @@ render() {
         </div>
       </Accordion>
 
-      <div className='event_graph'>
+      <div className='data-vis-wrapper2'>
         <EventGenre events={this.state.events}/>
 
         <ResponsiveContainer height = {400}>
