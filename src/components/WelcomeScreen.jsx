@@ -2,7 +2,7 @@ import React from "react";
 import '../css/WelcomeScreen.css';
 
 function WelcomeScreen(props) {
-   return props.showWelcomeScreen ?
+   return props.showWelcomeScreen === undefined ?
       (<div className="WelcomeScreen">
             <h1 className="welcome_text">Welcome to the Meet Up app</h1>
                <h4>
