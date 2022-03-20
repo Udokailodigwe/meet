@@ -41,11 +41,13 @@ class App extends Component{
     const isTokenValid = (await checkToken(accessToken)).error ? false : true;
     const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get("code");
-    this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+    // this.setState({ showWelcomeScreen: !(code || isTokenValid) });
     if ((code || isTokenValid) && this.mounted) {
       getEvents().then((events) => {
         if (this.mounted) {
           this.setState({ events, locations: extractLocations(events) });
+              this.setState({ showWelcomeScreen: true });
+
         }
       });
     } 
@@ -89,7 +91,9 @@ return data;
 
 render() {
     if( this.state.showWelcomeScreen === undefined) 
-        return <div className='App' />;
+        return <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
+              getAccessToken={() => { getAccessToken() }}
+        />;
     return (
       <div className="App">
         <h1>MEET APP</h1>
@@ -151,9 +155,6 @@ render() {
         <EventList 
             events={this.state.events}
             numberOfEvents={this.state.numberOfEvents}
-        />
-        <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
-              getAccessToken={() => { getAccessToken() }}
         />
       </div>
     );
