@@ -31,6 +31,7 @@ function WelcomeScreen(props) {
                         href="https://udokailodigwe.github.io/meet/privacy.html"
                         rel="nofollow noopener"
                         style={{textDecoration: 'none'}}
+                        className = 'privacy'
                      >
                         Privacy policy
                      </a>
