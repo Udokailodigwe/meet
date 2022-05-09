@@ -24,7 +24,6 @@ function WelcomeScreen(props) {
             <p className="sign_in-text">Need a Google account to sign in?<br></br> 
             Create one <a href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp">here!</a>
             </p>
-            
                         </div>
                         </div>
                      <a
